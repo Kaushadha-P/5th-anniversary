@@ -1,0 +1,2640 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Our Fairytale 🦄♡</title>
+
+
+  <!-- =========================================
+       GOOGLE FONTS
+  ========================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+
+  <style>
+
+    /* =========================================
+       RESET
+    ========================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Cormorant Garamond", serif;
+
+      color: white;
+
+      background: #10091d;
+
+      overflow-x: hidden;
+
+      font-weight: 400;
+    }
+
+
+    /* =========================================
+       MAGICAL SKY
+    ========================================== */
+
+    .sky {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: -20;
+
+      background:
+        radial-gradient(
+          circle at 50% 15%,
+          rgba(255, 180, 220, .35),
+          transparent 30%
+        ),
+        linear-gradient(
+          180deg,
+          #12091f,
+          #291034,
+          #572050,
+          #9a416c
+        );
+
+      transition:
+        background 1.5s ease;
+    }
+
+
+    /* =========================================
+       MOON
+    ========================================== */
+
+    .moon {
+
+      position: fixed;
+
+      width: 120px;
+      height: 120px;
+
+      border-radius: 50%;
+
+      background: #fff4dc;
+
+      top: 8%;
+      right: 12%;
+
+      box-shadow:
+        0 0 30px
+        rgba(255,244,220,.7),
+
+        0 0 80px
+        rgba(255,210,230,.35);
+
+      z-index: -10;
+
+      opacity: .85;
+    }
+
+
+    /* =========================================
+       STARS
+    ========================================== */
+
+    .stars {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: -8;
+
+      pointer-events: none;
+    }
+
+    .star {
+
+      position: absolute;
+
+      width: 3px;
+      height: 3px;
+
+      border-radius: 50%;
+
+      background: white;
+
+      opacity: .6;
+
+      animation:
+        twinkle
+        3s ease-in-out
+        infinite;
+    }
+
+    @keyframes twinkle {
+
+      0%, 100% {
+
+        opacity: .2;
+
+        transform:
+          scale(.7);
+      }
+
+      50% {
+
+        opacity: 1;
+
+        transform:
+          scale(1.5);
+      }
+
+    }
+
+
+    /* =========================================
+       FLOATING HEARTS
+    ========================================== */
+
+    .heart {
+
+      position: fixed;
+
+      bottom: -50px;
+
+      z-index: 3;
+
+      pointer-events: none;
+
+      opacity: 0;
+
+      animation:
+        heartRise
+        9s linear
+        infinite;
+    }
+
+    @keyframes heartRise {
+
+      0% {
+
+        transform:
+          translateY(0)
+          rotate(0deg)
+          scale(.7);
+
+        opacity: 0;
+      }
+
+      15% {
+        opacity: .5;
+      }
+
+      80% {
+        opacity: .35;
+      }
+
+      100% {
+
+        transform:
+          translateY(-120vh)
+          rotate(360deg)
+          scale(1.2);
+
+        opacity: 0;
+      }
+
+    }
+
+
+    /* =========================================
+       SECTIONS
+    ========================================== */
+
+    section {
+
+      min-height: 100vh;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      padding:
+        110px 25px;
+
+      position: relative;
+    }
+
+
+    /* =========================================
+       HERO
+    ========================================== */
+
+    .hero {
+
+      text-align: center;
+
+      flex-direction: column;
+    }
+
+    .eyebrow {
+
+      font-family:
+        "Montserrat",
+        sans-serif;
+
+      font-size: 11px;
+
+      letter-spacing: 7px;
+
+      text-transform: uppercase;
+
+      opacity: .7;
+
+      margin-bottom: 30px;
+    }
+
+    h1 {
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(60px, 12vw, 135px);
+
+      font-weight: 500;
+
+      letter-spacing: -3px;
+
+      line-height: .95;
+
+      text-shadow:
+        0 0 20px
+        rgba(255,255,255,.25),
+
+        0 0 60px
+        rgba(255,130,200,.35);
+    }
+
+    .hero-text {
+
+      max-width: 650px;
+
+      margin-top: 40px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(19px, 3vw, 27px);
+
+      line-height: 1.8;
+
+      opacity: .85;
+    }
+
+    .scroll {
+
+      position: absolute;
+
+      bottom: 30px;
+
+      font-family:
+        "Montserrat",
+        sans-serif;
+
+      font-size: 10px;
+
+      letter-spacing: 5px;
+
+      opacity: .6;
+
+      animation:
+        scrollBounce
+        2s ease-in-out
+        infinite;
+    }
+
+    @keyframes scrollBounce {
+
+      0%, 100% {
+        transform:
+          translateY(0);
+      }
+
+      50% {
+        transform:
+          translateY(10px);
+      }
+
+    }
+
+
+    /* =========================================
+       STORY
+    ========================================== */
+
+    .story {
+
+      flex-direction: column;
+
+      text-align: center;
+    }
+
+    .story-card {
+
+      width:
+        min(850px, 94vw);
+
+      max-width: 850px;
+
+      padding:
+        clamp(40px, 7vw, 75px)
+        clamp(25px, 6vw, 70px);
+
+      box-sizing: border-box;
+
+      border-radius: 30px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.13),
+          rgba(255,255,255,.05)
+        );
+
+      border:
+        1px solid
+        rgba(255,255,255,.18);
+
+      backdrop-filter:
+        blur(18px);
+
+      box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.25);
+
+      opacity: 0;
+
+      transform:
+        translateY(90px)
+        scale(.96);
+
+      transition:
+        opacity 1.2s ease,
+
+        transform
+        1.2s
+        cubic-bezier(
+          .22,.61,.36,1
+        );
+    }
+
+    .story-card.visible {
+
+      opacity: 1;
+
+      transform:
+        translateY(0)
+        scale(1);
+    }
+
+    .chapter {
+
+      font-family:
+        "Montserrat",
+        sans-serif;
+
+      font-size: 10px;
+
+      letter-spacing: 6px;
+
+      opacity: .55;
+
+      margin-bottom: 25px;
+    }
+
+    .story-card h2 {
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(40px, 7vw, 78px);
+
+      font-weight: 500;
+
+      letter-spacing: -1px;
+
+      line-height: 1.05;
+
+      margin-bottom: 35px;
+
+      text-shadow:
+        0 0 25px
+        rgba(255,150,210,.25);
+    }
+
+    .story-card p {
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(19px, 2.5vw, 24px);
+
+      line-height: 1.85;
+
+      letter-spacing: .15px;
+
+      opacity: .88;
+    }
+
+    .story-card em {
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-style: italic;
+
+      font-weight: 500;
+    }
+
+    .story-card strong {
+
+      font-weight: 600;
+    }
+
+    .highlight {
+
+      margin-top: 35px;
+
+      font-family:
+        "Great Vibes",
+        cursive;
+
+      font-size:
+        clamp(40px, 7vw, 75px);
+
+      font-weight: 400;
+
+      text-shadow:
+        0 0 30px
+        rgba(255,140,200,.7);
+    }
+
+
+    /* =========================================
+       DIVIDER
+    ========================================== */
+
+    .divider {
+
+      margin:
+        35px auto;
+
+      font-size: 25px;
+
+      letter-spacing: 15px;
+
+      opacity: .6;
+    }
+
+
+    /* =========================================
+       MEMORY GALLERY
+    ========================================== */
+
+    .memory-grid {
+
+      width: 100%;
+
+      max-width: 100%;
+
+      margin:
+        45px auto 0;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          minmax(0, 1fr)
+        );
+
+      gap: 20px;
+
+      box-sizing: border-box;
+    }
+
+    .memory {
+
+      width: 100%;
+
+      min-width: 0;
+
+      aspect-ratio: 1 / 1;
+
+      border-radius: 22px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      font-size: 45px;
+
+      background:
+        rgba(255,255,255,.09);
+
+      border:
+        1px solid
+        rgba(255,255,255,.18);
+
+      box-sizing: border-box;
+
+      overflow: hidden;
+
+      transition:
+        transform .5s ease,
+        background .5s ease;
+    }
+
+    .memory:hover {
+
+      transform:
+        translateY(-12px)
+        rotate(2deg)
+        scale(1.03);
+
+      background:
+        rgba(255,255,255,.16);
+    }
+
+    .memory img {
+
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
+
+      border-radius: inherit;
+    }
+
+
+    /* =========================================
+       CONFESSION
+    ========================================== */
+
+    .confession {
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(255,80,170,.22),
+          transparent 45%
+        );
+    }
+
+    .three-days {
+
+      font-family:
+        "Montserrat",
+        sans-serif;
+
+      font-size: 10px;
+
+      letter-spacing: 6px;
+
+      opacity: .65;
+
+      margin-bottom: 35px;
+    }
+
+    .love {
+
+      font-family:
+        "Great Vibes",
+        cursive;
+
+      font-size:
+        clamp(70px, 13vw, 155px);
+
+      font-weight: 400;
+
+      letter-spacing: 2px;
+
+      line-height: 1;
+
+      animation:
+        loveGlow
+        2s ease-in-out
+        infinite;
+    }
+
+    @keyframes loveGlow {
+
+      0%, 100% {
+
+        transform:
+          scale(1);
+
+        text-shadow:
+          0 0 15px
+          rgba(255,100,190,.4);
+      }
+
+      50% {
+
+        transform:
+          scale(1.05);
+
+        text-shadow:
+          0 0 60px
+          rgba(255,100,190,.9);
+      }
+
+    }
+
+    .love-heart {
+
+      font-size:
+        clamp(70px, 15vw, 170px);
+
+      margin-top: 20px;
+
+      animation:
+        heartbeat
+        1.5s infinite;
+    }
+
+    @keyframes heartbeat {
+
+      0%, 100% {
+        transform:
+          scale(1);
+      }
+
+      15% {
+        transform:
+          scale(1.18);
+      }
+
+      30% {
+        transform:
+          scale(1);
+      }
+
+      45% {
+        transform:
+          scale(1.1);
+      }
+
+      60% {
+        transform:
+          scale(1);
+      }
+
+    }
+
+
+    /* =========================================
+       FINAL CHAPTER
+    ========================================== */
+
+    .final {
+
+      text-align: center;
+
+      flex-direction: column;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(255,120,190,.25),
+          transparent 50%
+        );
+    }
+
+    .final-crown {
+
+      font-size: 50px;
+
+      margin-bottom: 25px;
+
+      animation:
+        crownFloat
+        3s ease-in-out
+        infinite;
+    }
+
+    @keyframes crownFloat {
+
+      0%, 100% {
+        transform:
+          translateY(0);
+      }
+
+      50% {
+        transform:
+          translateY(-10px);
+      }
+
+    }
+
+    .final h2 {
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(45px, 9vw, 100px);
+
+      font-weight: 500;
+
+      line-height: 1.1;
+    }
+
+    .final p {
+
+      max-width: 700px;
+
+      margin-top: 35px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(19px, 2.5vw, 25px);
+
+      line-height: 1.9;
+
+      opacity: .82;
+    }
+
+    .forever {
+
+      margin-top: 45px;
+
+      font-family:
+        "Great Vibes",
+        cursive;
+
+      font-size:
+        clamp(32px, 5vw, 55px);
+
+      font-weight: 400;
+
+      opacity: .95;
+    }
+
+
+    /* =========================================
+       UNICORN
+    ========================================== */
+
+    .unicorn {
+
+      position: fixed;
+
+      width: 190px;
+      height: 160px;
+
+      left: 70%;
+      top: 22%;
+
+      z-index: 20;
+
+      pointer-events: none;
+
+      transition:
+        left .7s
+        cubic-bezier(
+          .22,.61,.36,1
+        ),
+
+        top .7s
+        cubic-bezier(
+          .22,.61,.36,1
+        ),
+
+        transform .7s ease;
+
+      filter:
+        drop-shadow(
+          0 0 20px
+          rgba(255,180,230,.65)
+        );
+
+      animation:
+        unicornFloat
+        3s ease-in-out
+        infinite;
+    }
+
+    @keyframes unicornFloat {
+
+      0%, 100% {
+        margin-top: 0;
+      }
+
+      50% {
+        margin-top: -15px;
+      }
+
+    }
+
+    .unicorn-body {
+
+      position: absolute;
+
+      width: 120px;
+      height: 70px;
+
+      left: 35px;
+      top: 65px;
+
+      border-radius:
+        60% 50% 45% 55%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #fff,
+          #f8d9ef
+        );
+    }
+
+    .unicorn-neck {
+
+      position: absolute;
+
+      width: 55px;
+      height: 90px;
+
+      left: 25px;
+      top: 25px;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #fff,
+          #f8d9ef
+        );
+
+      transform:
+        rotate(-30deg);
+    }
+
+    .unicorn-head {
+
+      position: absolute;
+
+      width: 70px;
+      height: 62px;
+
+      left: 8px;
+      top: 4px;
+
+      border-radius:
+        55% 55% 45% 45%;
+
+      background: white;
+    }
+
+    .ear {
+
+      position: absolute;
+
+      width: 22px;
+      height: 35px;
+
+      top: -20px;
+
+      border-radius:
+        80% 20% 50% 50%;
+
+      background: white;
+    }
+
+    .ear.one {
+
+      left: 12px;
+
+      transform:
+        rotate(-20deg);
+    }
+
+    .ear.two {
+
+      left: 40px;
+
+      transform:
+        rotate(20deg);
+    }
+
+    .horn {
+
+      position: absolute;
+
+      left: 28px;
+      top: -42px;
+
+      width: 0;
+      height: 0;
+
+      border-left:
+        10px solid transparent;
+
+      border-right:
+        10px solid transparent;
+
+      border-bottom:
+        45px solid #ffd76e;
+
+      filter:
+        drop-shadow(
+          0 0 8px
+          #ffd76e
+        );
+    }
+
+    .eye {
+
+      position: absolute;
+
+      width: 8px;
+      height: 12px;
+
+      left: 48px;
+      top: 26px;
+
+      border-radius: 50%;
+
+      background: #35203e;
+    }
+
+    .cheek {
+
+      position: absolute;
+
+      width: 13px;
+      height: 8px;
+
+      left: 52px;
+      top: 40px;
+
+      border-radius: 50%;
+
+      background: #ff9fc8;
+
+      opacity: .7;
+    }
+
+    .mane {
+
+      position: absolute;
+
+      width: 70px;
+      height: 80px;
+
+      left: 45px;
+      top: 5px;
+
+      border-radius:
+        70% 30% 60% 40%;
+
+      background:
+        linear-gradient(
+          180deg,
+          #ff9ad5,
+          #c7a3ff,
+          #9ee9ff
+        );
+
+      transform:
+        rotate(25deg);
+
+      z-index: -1;
+    }
+
+    .tail {
+
+      position: absolute;
+
+      width: 65px;
+      height: 65px;
+
+      right: -15px;
+      top: 62px;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ff9ad5,
+          #bba3ff,
+          #91eaff
+        );
+
+      transform:
+        rotate(-20deg);
+    }
+
+    .leg {
+
+      position: absolute;
+
+      width: 15px;
+      height: 45px;
+
+      bottom: -32px;
+
+      border-radius: 20px;
+
+      background: #f8dff0;
+    }
+
+    .leg.one {
+      left: 55px;
+    }
+
+    .leg.two {
+      left: 90px;
+    }
+
+    .wing {
+
+      position: absolute;
+
+      width: 65px;
+      height: 55px;
+
+      left: 80px;
+      top: 45px;
+
+      border-radius:
+        80% 20% 80% 20%;
+
+      background:
+        rgba(255,255,255,.75);
+
+      animation:
+        wingMove
+        1s ease-in-out
+        infinite alternate;
+    }
+
+    @keyframes wingMove {
+
+      from {
+        transform:
+          rotate(-10deg)
+          scaleY(1);
+      }
+
+      to {
+        transform:
+          rotate(-30deg)
+          scaleY(.75);
+      }
+
+    }
+
+
+    /* =========================================
+       MUSIC BUTTON
+    ========================================== */
+
+    .music-button {
+
+      position: fixed;
+
+      right: 25px;
+      bottom: 25px;
+
+      width: 58px;
+      height: 58px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid
+        rgba(255,255,255,.3);
+
+      background:
+        rgba(255,255,255,.12);
+
+      backdrop-filter:
+        blur(15px);
+
+      color: white;
+
+      font-size: 23px;
+
+      cursor: pointer;
+
+      z-index: 100;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.2);
+
+      transition:
+        transform .3s ease,
+        background .3s ease;
+    }
+
+    .music-button:hover {
+
+      transform:
+        scale(1.1);
+
+      background:
+        rgba(255,255,255,.22);
+    }
+
+    .music-button.playing {
+
+      animation:
+        musicPulse
+        1.5s ease-in-out
+        infinite;
+    }
+
+    @keyframes musicPulse {
+
+      0%, 100% {
+
+        box-shadow:
+          0 0 0 0
+          rgba(255,150,210,.3);
+      }
+
+      50% {
+
+        box-shadow:
+          0 0 0 12px
+          rgba(255,150,210,0);
+      }
+
+    }
+
+
+    /* =========================================
+       MUSIC LABEL
+    ========================================== */
+
+    .music-label {
+
+      position: fixed;
+
+      right: 92px;
+      bottom: 34px;
+
+      padding:
+        8px 15px;
+
+      border-radius: 20px;
+
+      background:
+        rgba(0,0,0,.25);
+
+      backdrop-filter:
+        blur(10px);
+
+      font-family:
+        "Montserrat",
+        sans-serif;
+
+      font-size: 10px;
+
+      letter-spacing: 1px;
+
+      opacity: 0;
+
+      transform:
+        translateX(10px);
+
+      transition:
+        opacity .4s ease,
+        transform .4s ease;
+
+      z-index: 99;
+
+      pointer-events: none;
+    }
+
+    .music-label.show {
+
+      opacity: .8;
+
+      transform:
+        translateX(0);
+    }
+
+
+    /* =========================================
+       MOBILE
+    ========================================== */
+
+    @media (max-width: 700px) {
+
+      .moon {
+
+        width: 75px;
+        height: 75px;
+
+        right: 8%;
+      }
+
+      .unicorn {
+
+        width: 130px;
+        height: 110px;
+
+        transform:
+          scale(.7);
+      }
+
+      .memory-grid {
+
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0, 1fr)
+          );
+
+        gap: 15px;
+      }
+
+      .memory {
+
+        font-size: 35px;
+      }
+
+      .music-button {
+
+        width: 52px;
+        height: 52px;
+
+        right: 18px;
+        bottom: 18px;
+      }
+
+      .music-label {
+
+        display: none;
+      }
+
+      .story-card {
+
+        border-radius: 24px;
+      }
+
+    }
+
+
+    /* =========================================
+       VERY SMALL SCREENS
+    ========================================== */
+
+    @media (max-width: 430px) {
+
+      section {
+
+        padding:
+          90px 15px;
+      }
+
+      .story-card {
+
+        width: 96vw;
+
+        padding:
+          40px 20px;
+      }
+
+      .memory-grid {
+
+        gap: 10px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================================
+       BACKGROUND
+  ========================================== -->
+
+  <div
+    class="sky"
+    id="sky">
+  </div>
+
+  <div class="moon"></div>
+
+  <div
+    class="stars"
+    id="stars">
+  </div>
+
+
+  <!-- =========================================
+       MUSIC
+  ========================================== -->
+
+  <audio
+    id="backgroundMusic"
+    loop
+    preload="auto">
+
+    <source
+      src="music.mp3"
+      type="audio/mpeg">
+
+  </audio>
+
+
+  <button
+    class="music-button"
+    id="musicButton"
+    aria-label="Play music">
+
+    ♫
+
+  </button>
+
+
+  <div
+    class="music-label"
+    id="musicLabel">
+
+    Our song ♡
+
+  </div>
+
+
+  <!-- =========================================
+       UNICORN
+  ========================================== -->
+
+  <div
+    class="unicorn"
+    id="unicorn">
+
+    <div class="mane"></div>
+
+    <div class="unicorn-neck"></div>
+
+    <div class="unicorn-body"></div>
+
+    <div class="wing"></div>
+
+    <div class="tail"></div>
+
+    <div class="leg one"></div>
+
+    <div class="leg two"></div>
+
+    <div class="unicorn-head">
+
+      <div class="ear one"></div>
+
+      <div class="ear two"></div>
+
+      <div class="horn"></div>
+
+      <div class="eye"></div>
+
+      <div class="cheek"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================
+       OPENING
+  ========================================== -->
+
+  <section class="hero">
+
+    <div class="eyebrow">
+      A story written by fate
+    </div>
+
+    <h1>
+
+      Once Upon<br>
+      A Time...
+
+    </h1>
+
+    <p class="hero-text">
+
+      In a kingdom not so far away,
+      there lived a prince who thought
+      his story had already been written.
+
+      <br><br>
+
+      He was wrong.
+
+    </p>
+
+    <div class="scroll">
+
+      ↓ &nbsp;
+      SCROLL TO ENTER THE FAIRYTALE
+      &nbsp; ↓
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       CHAPTER I
+  ========================================== -->
+
+  <section class="story">
+
+    <div class="story-card reveal">
+
+      <div class="chapter">
+        CHAPTER I · THE LONELY PRINCE
+      </div>
+
+      <h2>
+        Once there was a prince...
+      </h2>
+
+      <p>
+
+        Once upon a time,
+        in a kingdom not so far away,
+        there lived a young prince.
+
+        <br><br>
+
+        But this prince was not living
+        in a world filled with
+        sunshine and laughter.
+
+        <br><br>
+
+        After losing someone
+        he once loved,
+        his heart became heavy.
+
+        <br><br>
+
+        His days became quiet.
+        His smile became rare.
+        His thoughts became filled
+        with sadness, worry,
+        and questions.
+
+        <br><br>
+
+        It felt as though his entire
+        kingdom had lost its light.
+
+      </p>
+
+      <div class="divider">
+        ✦ ✦ ✦
+      </div>
+
+      <p>
+
+        The prince didn't know it yet...
+
+        <br><br>
+
+        but somewhere in that darkness,
+        fate was already preparing
+        his next chapter.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       CHAPTER II
+  ========================================== -->
+
+  <section class="story">
+
+    <div class="story-card reveal">
+
+      <div class="chapter">
+        CHAPTER II · THE ACCIDENTAL MEETING
+      </div>
+
+      <h2>
+        Then, one ordinary day...
+      </h2>
+
+      <p>
+
+        The prince wandered into a place
+        he never planned to visit.
+
+        <br><br>
+
+        And there she was.
+
+        <br><br>
+
+        A beautiful princess,
+        standing before her students,
+        completely unaware that a new
+        chapter of her life had just begun.
+
+        <br><br>
+
+        It was an accident.
+
+        <br><br>
+
+        Or perhaps...
+
+        <br>
+
+        <em>it was fate.</em>
+
+      </p>
+
+      <div class="divider">
+        🦄 ✦ 🦄
+      </div>
+
+      <p>
+
+        Somehow, the princess noticed
+        that the prince wasn't himself.
+
+        <br><br>
+
+        She saw the sadness hiding
+        behind his silence.
+
+        <br><br>
+
+        And she began to talk to him.
+
+        <br><br>
+
+        It was only a little conversation.
+
+        <br><br>
+
+        Nothing that either of them
+        could have imagined would change
+        their lives.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       CHAPTER III
+  ========================================== -->
+
+  <section class="story">
+
+    <div class="story-card reveal">
+
+      <div class="chapter">
+        CHAPTER III · THE LITTLE SPARK
+      </div>
+
+      <h2>
+        A little café...
+      </h2>
+
+      <p>
+
+        Then another day arrived.
+
+        <br><br>
+
+        The prince and princess
+        spent some time together.
+
+        <br><br>
+
+        They went to a little place
+        called Barista.
+
+        <br><br>
+
+        There was no grand castle.
+        No royal ball.
+        No magical spell.
+
+        <br><br>
+
+        Just two people,
+        a little conversation,
+        and a simple day.
+
+      </p>
+
+      <div class="highlight">
+        ☕ ♡
+      </div>
+
+      <p>
+
+        But somewhere between
+        those little moments...
+
+        <br><br>
+
+        something changed inside
+        the prince's heart.
+
+        <br><br>
+
+        He began to look at the princess
+        a little differently.
+
+        <br><br>
+
+        He had found
+        <strong>a little crush.</strong>
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       CHAPTER IV
+  ========================================== -->
+
+  <section class="story">
+
+    <div class="story-card reveal">
+
+      <div class="chapter">
+        CHAPTER IV · THE PRINCESS'S HEART
+      </div>
+
+      <h2>
+        Another day at OGF...
+      </h2>
+
+      <p>
+
+        Another day came.
+
+        <br><br>
+
+        And this time,
+        the prince and princess
+        went to OGF.
+
+        <br><br>
+
+        The day slowly passed,
+        and they talked.
+
+        <br><br>
+
+        But then the princess began
+        telling the prince about
+        the problems she was carrying
+        in her heart that day.
+
+      </p>
+
+      <div class="divider">
+        ♡ ✦ ♡
+      </div>
+
+      <p>
+
+        And the prince listened.
+
+        <br><br>
+
+        At that moment,
+        he realized something.
+
+        <br><br>
+
+        He didn't simply think
+        she was beautiful.
+
+        <br><br>
+
+        He wanted to understand her.
+
+        <br>
+
+        He wanted to be there for her.
+
+        <br>
+
+        He wanted to see her smile.
+
+        <br><br>
+
+        The princess was becoming
+        more than just a beautiful person
+        in his story.
+
+        <br><br>
+
+        She was becoming
+        <em>his person.</em>
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       CHAPTER V
+  ========================================== -->
+
+  <section class="confession">
+
+    <div class="story-card reveal">
+
+      <div class="three-days">
+        THREE DAYS LATER...
+      </div>
+
+      <h2>
+        The words in his heart
+      </h2>
+
+      <p>
+
+        Three days passed.
+
+        <br><br>
+
+        The prince had tried to keep
+        the feeling hidden.
+
+        <br><br>
+
+        But some feelings are simply
+        too beautiful to keep inside.
+
+        <br><br>
+
+        So the prince finally gathered
+        all the courage in his heart...
+
+      </p>
+
+      <div class="divider">
+        ✦
+      </div>
+
+      <div class="love">
+        I LOVE YOU
+      </div>
+
+      <div class="love-heart">
+        ❤️
+      </div>
+
+      <p>
+
+        And with those three little words...
+
+        <br><br>
+
+        their fairytale truly began.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       CHAPTER VI
+  ========================================== -->
+
+  <section class="story">
+
+    <div class="story-card reveal">
+
+      <div class="chapter">
+        CHAPTER VI · SINCE THAT DAY
+      </div>
+
+      <h2>
+        And then...
+      </h2>
+
+      <p>
+
+        Since that day,
+        the prince and princess
+        have continued writing
+        their own story.
+
+        <br><br>
+
+        Not a perfect story.
+
+        <br>
+
+        Not a story without
+        difficult days.
+
+        <br><br>
+
+        But their story.
+
+        <br><br>
+
+        A story filled with laughter,
+        little adventures,
+        random conversations,
+        unforgettable memories,
+        and love.
+
+      </p>
+
+      <div class="divider">
+        ♡ ✦ ♡
+      </div>
+
+      <p>
+
+        And the most beautiful part?
+
+        <br><br>
+
+        The story didn't end
+        after those three words.
+
+        <br><br>
+
+        It was only beginning.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       MEMORIES
+  ========================================== -->
+
+  <section class="story">
+
+    <div class="story-card reveal">
+
+      <div class="chapter">
+        THE KINGDOM OF MEMORIES
+      </div>
+
+      <h2>
+        Little moments,
+        forever memories.
+      </h2>
+
+      <p>
+
+        Every fairytale has
+        its beautiful little moments.
+
+        <br><br>
+
+        These are ours.
+
+      </p>
+
+
+      <div class="memory-grid">
+
+        <!--
+          REPLACE THE EMOJIS WITH YOUR PHOTOS.
+
+          Example:
+
+          <div class="memory">
+            <img src="photo1.jpg">
+          </div>
+        -->
+
+
+        <div class="memory">
+          🌸
+        </div>
+
+        <div class="memory">
+          ☕
+        </div>
+
+        <div class="memory">
+          🌊
+        </div>
+
+        <div class="memory">
+          💕
+        </div>
+
+        <div class="memory">
+          ✨
+        </div>
+
+        <div class="memory">
+          🦄
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       FINAL
+  ========================================== -->
+
+  <section class="final">
+
+    <div class="final-crown">
+      👑
+    </div>
+
+    <h2>
+
+      And so,
+      <br>
+      the story continues...
+
+    </h2>
+
+    <p>
+
+      And so, the story that began
+      with a lonely prince...
+
+      <br><br>
+
+      and an accidental meeting
+      with a beautiful princess...
+
+      <br><br>
+
+      became a love neither of them
+      expected.
+
+      <br><br>
+
+      And they kept choosing each other...
+
+      <br>
+
+      day after day,
+
+      <br>
+
+      chapter after chapter,
+
+      <br>
+
+      memory after memory.
+
+    </p>
+
+    <div class="forever">
+
+      The story is still being written. ♡
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================== -->
+
+  <script>
+
+
+    /* =========================================
+       CREATE STARS
+    ========================================== */
+
+    const stars =
+      document.getElementById("stars");
+
+    for (
+      let i = 0;
+      i < 150;
+      i++
+    ) {
+
+      const star =
+        document.createElement("div");
+
+      star.className =
+        "star";
+
+      star.style.left =
+        Math.random() * 100 + "%";
+
+      star.style.top =
+        Math.random() * 100 + "%";
+
+      star.style.animationDelay =
+        Math.random() * 5 + "s";
+
+      star.style.animationDuration =
+        2 +
+        Math.random() * 4 +
+        "s";
+
+      stars.appendChild(star);
+
+    }
+
+
+    /* =========================================
+       FLOATING HEARTS
+    ========================================== */
+
+    const symbols = [
+      "♡",
+      "♥",
+      "❤",
+      "✦",
+      "✧"
+    ];
+
+    for (
+      let i = 0;
+      i < 30;
+      i++
+    ) {
+
+      const heart =
+        document.createElement("div");
+
+      heart.className =
+        "heart";
+
+      heart.innerHTML =
+        symbols[
+          Math.floor(
+            Math.random() *
+            symbols.length
+          )
+        ];
+
+      heart.style.left =
+        Math.random() * 100 + "%";
+
+      heart.style.fontSize =
+        12 +
+        Math.random() * 25 +
+        "px";
+
+      heart.style.animationDelay =
+        Math.random() * 9 +
+        "s";
+
+      heart.style.animationDuration =
+        7 +
+        Math.random() * 8 +
+        "s";
+
+      document.body.appendChild(
+        heart
+      );
+
+    }
+
+
+    /* =========================================
+       UNICORN SCROLL MOVEMENT
+    ========================================== */
+
+    const unicorn =
+      document.getElementById(
+        "unicorn"
+      );
+
+    function moveUnicorn() {
+
+      const scrollTop =
+        window.scrollY;
+
+      const maxScroll =
+        document.documentElement
+          .scrollHeight -
+        window.innerHeight;
+
+      const progress =
+        maxScroll > 0
+          ? scrollTop / maxScroll
+          : 0;
+
+
+      const x =
+        Math.sin(
+          progress *
+          Math.PI *
+          5
+        ) *
+        38 +
+        50;
+
+      const y =
+        18 +
+        Math.sin(
+          progress *
+          Math.PI *
+          3
+        ) *
+        17;
+
+
+      unicorn.style.left =
+        `calc(${x}% - 95px)`;
+
+      unicorn.style.top =
+        `${y}%`;
+
+
+      const rotation =
+        Math.cos(
+          progress *
+          Math.PI *
+          5
+        ) * 8;
+
+      unicorn.style.transform =
+        `rotate(${rotation}deg)`;
+
+    }
+
+
+    window.addEventListener(
+      "scroll",
+      moveUnicorn,
+      {
+        passive: true
+      }
+    );
+
+    moveUnicorn();
+
+
+    /* =========================================
+       STORY CARD REVEAL
+    ========================================== */
+
+    const cards =
+      document.querySelectorAll(
+        ".reveal"
+      );
+
+    const observer =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(
+            entry => {
+
+              if (
+                entry.isIntersecting
+              ) {
+
+                entry.target
+                  .classList
+                  .add("visible");
+
+              }
+
+            }
+          );
+
+        },
+        {
+          threshold: .18
+        }
+      );
+
+
+    cards.forEach(
+      card => {
+
+        observer.observe(card);
+
+      }
+    );
+
+
+    /* =========================================
+       BACKGROUND COLOR CHANGES
+    ========================================== */
+
+    const sky =
+      document.getElementById(
+        "sky"
+      );
+
+    window.addEventListener(
+      "scroll",
+      () => {
+
+        const scrollTop =
+          window.scrollY;
+
+        const maxScroll =
+          document.documentElement
+            .scrollHeight -
+          window.innerHeight;
+
+        const progress =
+          maxScroll > 0
+            ? scrollTop / maxScroll
+            : 0;
+
+
+        if (progress < .18) {
+
+          sky.style.background =
+          `
+          radial-gradient(
+            circle at 50% 15%,
+            rgba(100,70,130,.2),
+            transparent 30%
+          ),
+          linear-gradient(
+            180deg,
+            #090611,
+            #13091e,
+            #21102d
+          )
+          `;
+
+        }
+
+        else if (progress < .35) {
+
+          sky.style.background =
+          `
+          radial-gradient(
+            circle at 50% 20%,
+            rgba(255,170,215,.25),
+            transparent 35%
+          ),
+          linear-gradient(
+            180deg,
+            #21102f,
+            #57204e,
+            #9c4c76
+          )
+          `;
+
+        }
+
+        else if (progress < .55) {
+
+          sky.style.background =
+          `
+          radial-gradient(
+            circle at 30% 30%,
+            rgba(255,150,210,.35),
+            transparent 35%
+          ),
+          linear-gradient(
+            180deg,
+            #3b174f,
+            #8d376d,
+            #d76f9a
+          )
+          `;
+
+        }
+
+        else if (progress < .72) {
+
+          sky.style.background =
+          `
+          radial-gradient(
+            circle at 50% 40%,
+            rgba(255,80,180,.3),
+            transparent 40%
+          ),
+          linear-gradient(
+            180deg,
+            #35113f,
+            #762052,
+            #bd4677
+          )
+          `;
+
+        }
+
+        else {
+
+          sky.style.background =
+          `
+          radial-gradient(
+            circle at 70% 15%,
+            rgba(130,100,210,.35),
+            transparent 40%
+          ),
+          linear-gradient(
+            180deg,
+            #11091f,
+            #29113c,
+            #5b2455
+          )
+          `;
+
+        }
+
+      },
+      {
+        passive: true
+      }
+    );
+
+
+    /* =========================================
+       BACKGROUND MUSIC
+    ========================================== */
+
+    const music =
+      document.getElementById(
+        "backgroundMusic"
+      );
+
+    const musicButton =
+      document.getElementById(
+        "musicButton"
+      );
+
+    const musicLabel =
+      document.getElementById(
+        "musicLabel"
+      );
+
+    let musicStarted =
+      false;
+
+
+    function startMusic() {
+
+      if (musicStarted)
+        return;
+
+      musicStarted = true;
+
+      music.volume = 0;
+
+      music.play()
+        .then(() => {
+
+          musicButton
+            .classList
+            .add("playing");
+
+          musicButton.innerHTML =
+            "❚❚";
+
+          musicButton
+            .setAttribute(
+              "aria-label",
+              "Pause music"
+            );
+
+
+          musicLabel
+            .classList
+            .add("show");
+
+
+          let volume = 0;
+
+          const fadeIn =
+            setInterval(
+              () => {
+
+                volume += .02;
+
+                music.volume =
+                  Math.min(
+                    volume,
+                    .35
+                  );
+
+                if (
+                  volume >= .35
+                ) {
+
+                  clearInterval(
+                    fadeIn
+                  );
+
+                }
+
+              },
+              100
+            );
+
+
+          setTimeout(
+            () => {
+
+              musicLabel
+                .classList
+                .remove("show");
+
+            },
+            3000
+          );
+
+        })
+        .catch(() => {
+
+          musicStarted = false;
+
+        });
+
+    }
+
+
+    /* =========================================
+       START MUSIC ON FIRST INTERACTION
+    ========================================== */
+
+    document.addEventListener(
+      "click",
+      startMusic,
+      {
+        once: true
+      }
+    );
+
+    document.addEventListener(
+      "touchstart",
+      startMusic,
+      {
+        once: true
+      }
+    );
+
+    document.addEventListener(
+      "scroll",
+      startMusic,
+      {
+        once: true,
+        passive: true
+      }
+    );
+
+
+    /* =========================================
+       MUSIC PLAY / PAUSE
+    ========================================== */
+
+    musicButton.addEventListener(
+      "click",
+      event => {
+
+        event.stopPropagation();
+
+        if (
+          music.paused
+        ) {
+
+          music.play();
+
+          music.volume =
+            .35;
+
+          musicStarted =
+            true;
+
+          musicButton
+            .classList
+            .add("playing");
+
+          musicButton.innerHTML =
+            "❚❚";
+
+          musicButton
+            .setAttribute(
+              "aria-label",
+              "Pause music"
+            );
+
+        }
+
+        else {
+
+          music.pause();
+
+          musicButton
+            .classList
+            .remove(
+              "playing"
+            );
+
+          musicButton.innerHTML =
+            "♫";
+
+          musicButton
+            .setAttribute(
+              "aria-label",
+              "Play music"
+            );
+
+        }
+
+      }
+    );
+
+
+  </script>
+
+</body>
+
+</html>
+```
