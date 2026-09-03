@@ -1753,11 +1753,6 @@
 
   </section>
 
-
-  <!-- =========================================
-       FINAL
-  ========================================== -->
-
   <section class="final">
 
     <div class="final-crown">
@@ -1813,17 +1808,7 @@
 
   </section>
 
-
-  <!-- =========================================
-       JAVASCRIPT
-  ========================================== -->
-
   <script>
-
-
-    /* =========================================
-       CREATE STARS
-    ========================================== */
 
     const stars =
       document.getElementById("stars");
@@ -1857,11 +1842,6 @@
       stars.appendChild(star);
 
     }
-
-
-    /* =========================================
-       FLOATING HEARTS
-    ========================================== */
 
     const symbols = [
       "♡",
@@ -1913,11 +1893,6 @@
       );
 
     }
-
-
-    /* =========================================
-       UNICORN SCROLL MOVEMENT
-    ========================================== */
 
     const unicorn =
       document.getElementById(
@@ -1997,11 +1972,6 @@
 
     moveUnicorn();
 
-
-    /* =========================================
-       STORY CARD REVEAL
-    ========================================== */
-
     const cards =
       document.querySelectorAll(
         ".reveal"
@@ -2041,11 +2011,6 @@
 
       }
     );
-
-
-    /* =========================================
-       BACKGROUND COLOR CHANGES
-    ========================================== */
 
     const sky =
       document.getElementById(
@@ -2171,11 +2136,6 @@
       }
     );
 
-
-    /* =========================================
-       AUTOMATIC BACKGROUND MUSIC
-    ========================================== */
-
     const music =
       document.getElementById(
         "backgroundMusic"
@@ -2244,11 +2204,6 @@
 
     }
 
-
-    /* =========================================
-       START MUSIC WHEN SCROLLING
-    ========================================== */
-
     window.addEventListener(
       "scroll",
       startMusic,
@@ -2258,11 +2213,6 @@
       }
     );
 
-
-    /* =========================================
-       TOUCH SUPPORT
-    ========================================== */
-
     window.addEventListener(
       "touchstart",
       startMusic,
@@ -2271,12 +2221,7 @@
         passive: true
       }
     );
-
-
-    /* =========================================
-       CLICK SUPPORT
-    ========================================== */
-
+    
     window.addEventListener(
       "pointerdown",
       startMusic,
@@ -2291,4 +2236,3 @@
 </body>
 
 </html>
-```
